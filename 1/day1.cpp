@@ -23,7 +23,6 @@ int Check(string dir, int end, int password) {
             password = min + temp;
         }
     }
-    cout << password << endl;
     return password;
 }
 
@@ -39,7 +38,6 @@ int main() {
     ifstream MyReadFile("input.txt");
 
     while (getline (MyReadFile, input)) {
-        cout << input << endl;
 
         pos = input.find("L");
         dir = "L";
@@ -48,7 +46,6 @@ int main() {
         }
 
         int end = stoi(input.substr(1));
-        //cout << end << endl;
         
         password = Check(dir, end, password);
 
@@ -59,27 +56,6 @@ int main() {
 
     MyReadFile.close(); 
 
-    //while (true)
-    //{
-    //    cin >> input;
-    //
-    //    if (input == "end") {
-    //        break;
-    //    }
-    //
-    //    pos = input.find("L");
-    //    dir = "L";
-    //    if (pos < 0) {
-    //        pos = input.find("R");
-    //       dir = "R";
-    //    }
-    //
-    //    string end = input.substr(pos + 1);
-    //    
-    //    password = Check(dir, end, password);
-    //
-    //    cout << "het is: " << password << endl;
-    //}
     cout << "het is: " << count << endl;
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<std::chrono::microseconds>(end - start);

@@ -30,18 +30,22 @@ int main() {
         string tempVar1;
         string tempVar2;
 
-        for (int_fast64_t i = num1; i <= num2; i++) {
-            string p = to_string(i);
+        if (num1 != 0) {
+            for (int_fast64_t i = num1; i <= num2; i++) {
+                string p = to_string(i);
                 
-            if (p.length() % 2 == 0) {
-                int_fast64_t half = p.length() / 2;
-                tempVar1 = p.substr(0, half);
-                tempVar2 = p.substr(half, half);
-                if (tempVar1 == tempVar2) {
-                    count += stoll(p);
-                } 
+                if (p.length() % 2 == 0) {
+                    int_fast64_t half = p.length() / 2;
+                    tempVar1 = p.substr(0, half);
+                    tempVar2 = p.substr(half, half);
+                    if (tempVar1 == tempVar2) {
+                        count += stoll(p);
+                    } 
+                } else {
+                    cout << "odd" << endl;
+                }
             }
-        }        
+        }
     }
 
     File.close(); 
